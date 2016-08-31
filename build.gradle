@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    jcenter()
+}
+
+ext {
+    hibernateVersion = '5.2.1.Final'
+    springVersion = '4.3.2.RELEASE'
+    mysqlVersion = '5.1.39'
+    junitVersion = '4.12'
+    assertJVersion = '3.5.2'
+    lombokVersion = '1.16.10'
+    slf4jVersion = '1.7.21'
+}
+
+dependencies {
+    compile "org.hibernate:hibernate-core:${hibernateVersion}",
+            "org.springframework:spring-core:${springVersion}",
+            "org.springframework:spring-context:${springVersion}",
+            "org.springframework:spring-expression:${springVersion}",
+            "org.springframework:spring-jdbc:${springVersion}",
+            "org.springframework:spring-tx:${springVersion}",
+            "org.springframework:spring-jms:${springVersion}",
+            "org.springframework:spring-web:${springVersion}",
+            "org.springframework:spring-orm:${springVersion}",
+            "org.springframework:spring-oxm:${springVersion}",
+            "org.springframework:spring-webmvc:${springVersion}",
+            "org.springframework:spring-websocket:${springVersion}",
+            "org.projectlombok:lombok:${lombokVersion}",
+            "mysql:mysql-connector-java:${mysqlVersion}",
+            "org.slf4j:slf4j-api:${slf4jVersion}"
+
+    testCompile "junit:junit:${junitVersion}",
+                "org.assertj:assertj-core:${assertJVersion}",
+                "org.springframework:spring-test:${springVersion}"
+}

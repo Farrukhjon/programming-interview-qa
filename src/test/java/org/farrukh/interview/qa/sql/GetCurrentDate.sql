@@ -1,0 +1,4 @@
+SELECT
+  NOW(),
+  CURDATE(),
+  CURTIME();
