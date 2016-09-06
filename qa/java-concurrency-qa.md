@@ -156,3 +156,12 @@ Atomic, non-blocking synchronization operations implemented in low-level machine
  The shutdown hook is a thread, which is invoked implicitly when before a JVM shuts down.
  Some clean up action is an example of usage.
 
+### Concurrent Access Problems
+
+Q: What are common known concurrent access problems?
+
+ - Data Races (race conditions, race hazard)
+ - Deadlocks
+ - Livelocks
+ - Starvation
+ 
