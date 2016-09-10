@@ -1,5 +1,20 @@
-Hibernate ORM Framework Questions & Answers
+Hibernate and JPA ORM Framework Questions & Answers
 ---
+
+**Q: What is JPA API?**
+
+JPA (Java Persistence API) is a specification for solving object mapping problem to the relational model and vise versa
+ - Common used annotations are located in the `javax.persistence` package 
+ - Using JPA annotation in code gives us write implementation independent code
+
+**Q: Why use Hibernate?**
+
+ - Provides JPA and Its own API
+ - Has powerful HQL language
+ - Is Open-Source
+ - Supports lazy-initialization using proxy-objects (performs queries on-demand)
+ - Provides Caching mechanism (cache-level1 and cache-level2) for better performance
+ - Provides mapping for most known databases
 
 ###Core API
 
@@ -13,6 +28,40 @@ Hibernate ORM Framework Questions & Answers
  - `Query`
  - `Criteria`
 
+**Q: Characteristics of instance of SessionFactory**
+
+ - Main factory class for getting and managing a `Session` object 
+ - Implemented using singleton pattern, 
+ - Is immutable
+ - Is and thread-safe
+ 
+**Q: What is difference between `openSession()`, `getCurrentSession()` and `openStatelessSession()` methods of a SessionFactory object?**
+
+ - openSession (Session)
+   - returns a new session in every call
+   - must be closed after each operations on a database
+ - getCurrentSession (Session)
+   - returns current session 
+   - bounded to the hibernate global context
+   - must not to be closed   
+ - openStatelessSession (StatelessSession)
+   - returns a new stateless session
+   - does't implement first-level cache
+   - does't interact with second-level cache
+   - recommended to use in batch operations
+
+**Q: What is first-level cache (L1 cache)?**
+
+ - Session scoped cache. It means that other session cannot use cached objects from some session
+ - Is enabled by default and cannot be disabled
+ - An particular object can be removed from a session cache via Session.evict(Object) method. Second query for the object hits a database
+ - All cached objects can be removed via Session.clear() method
+ 
+**Q: What is second-level cache (L2 cache)?**
+ - SessionFactory scoped cache. Objects are cached across all sessions which created this SessionFactory 
+ - Can be enabled or disabled via configuration
+ - There are several cache provider: EhCache, JBoss Cache, 
+  
 **Q: What is different between `load` and `get` method of a `session` object?**
 
 **A:**
