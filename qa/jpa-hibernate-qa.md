@@ -6,6 +6,20 @@ Hibernate and JPA ORM Framework Questions & Answers
 JPA (Java Persistence API) is a specification for solving object mapping problem to the relational model and vise versa
  - Common used annotations are located in the `javax.persistence` package 
  - Using JPA annotation in code gives us write implementation independent code
+ - JPA Query mechanisms
+   - JPQL is string-based query language
+   - Criteria API is object-based query API
+
+**Q: JPA Parameter Binding for JPQL and Criteria?**
+
+JPA & Hibernate supports this kind of parameters binding technique
+ - Parameter Objects
+ - Named Parameters
+   A named parameter of a Java Persistence query language query is an identifier that is prefixed by the
+   ":" symbol. The parameter names passed to the setParameter methods of the Query and
+   TypedQuery interfaces do not include this ":" prefix.
+ - Positional Parameters (is not supported for criteria queries)
+ - Named Queries
 
 **Q: Why use Hibernate?**
 
