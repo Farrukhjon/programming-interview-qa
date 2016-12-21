@@ -4,16 +4,19 @@ Object-Oriented Programming Questions & Answers
 
 **1. Encapsulation**
   
-  Encapsulation provides objects the ability to `hide` the object `internal state` and `behavior`.
-   - Internal state the object is protected by `hidding its attributes`
-   - The behavior is protected by `access modifires` like `private, protected and publik`
+  Encapsulation provides an object the ability to `hide` its `internal state` and `behavior`.
+   - Internal state an object is protected by `hidding its attributes/properties`
+   - The behavior is protected by `access modifires` like `private, protected and public`
    - Provides `public interface` with `private implementation`
 
 **2. Polymorphism**
   
-  Polymorphism objects the ability behavior for the same `action/message` with different, object specific implementation of the `behavior`.
-  The principle implemented by so called `Dynamic binding` or `late binding` mechanism. In this technique which of the object `behavior` should 
-  be selected decide on `run time`.
+  Polymorphism of the objects is the ability for the same `action/message` with different behavior, with object specific implementation of some behavior.
+  There are two types of polymorphism:
+   - Static polymorphism (early binding, on compile time)
+    - Provided by method overloading for specific behavior by extra method parameters
+   - Dynamic polymorphism (late binding, on run-time)
+    - Provided by method overridden in the subclasses. 
   
 **3. Inheritance**
   
