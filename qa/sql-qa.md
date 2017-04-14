@@ -68,10 +68,12 @@ A `Many-To-Many` table association is a classic example of a good use case of a 
 **Q: What is the difference between `HAVING and WHERE` clauses?**
 
 **A:**
- Both specify a search condition for a group or an aggregate
- WHERE:
+Both specify a search condition for a group or an aggregate
+
+WHERE:
    - Applied to each row before they are part of the GROUP BY function in a query
- HAVING:
+
+HAVING:
   - Was added to SQL because the WHERE keyword could not be used with `aggregate functions`
   - Can be used only with the SELECT statement
   - Typically used in a GROUP BY clause
@@ -88,14 +90,17 @@ A `Many-To-Many` table association is a classic example of a good use case of a 
 **Q: What are the difference between `DELETE, TRUNCATE and DROP` commands?**
 
 **A:** 
+
 DELETE:
  - Used to remove `some or all rows` from a table
  - WHERE clause is used `to remove some rows`
  - If WHERE no used `all rows` will be removed
  - After performing DELETE command COMMIT or ROLLBACK required in transaction 
+
 TRUNCATE
  - Used to remove `all rows` from a table
  - The operation `cannot be rolled back` 
+
 DROP
  - Used to remove `a table` from a database.
  - The operation `cannot be rolled back`
@@ -104,11 +109,13 @@ DROP
 
 **A:**
 UNION `merges` the contents of `two structurally-compatible tables` into `a single combined table` in a SELECT command.
-UNION
- - does not allow `duplicate records` in to a combined table
-UNION ALL
- - allows `duplicate records` in to a combined table 
- - has better performance then UNION since does not additional removal operations for duplicate rows
+
+**UNION**
+   - does not allow `duplicate records` in to a combined table
+
+**UNION ALL**
+  - allows `duplicate records` in to a combined table 
+  - has better performance then UNION since does not additional removal operations for duplicate rows
  
 **Q: Explain all type of `JOIN` clauses in ANSI-SQL** 
 
@@ -123,15 +130,41 @@ There are five type of JOIN clauses in standard of ANSI-SQL:
      - returns `all rows from the right` table, and the `matched rows` from the `left table`;
   - FULL JOIN
    - returns all rows from the a left table and from a right table
-  - CROSS JOIN
+  - CROSS JOIN (all possible rows combination of joining tables)
    - returns all the rows from the left table and all the rows from right table and shows as `Cartesian product`, with all possibilities
  
+Syntax
+ - INNER JOIN
+   ```
+   SELECT `columns`
+   FROM `first_table`
+   INNER JOIN `second_table`
+   ON `first_table.someID = second_table.someId`;
+
+   ```
+ - LEFT JOIN
+   ```
+   SELECT `columns`
+   FROM `first_table`
+   LEFT JOIN `second_table`
+   ON `first_table.someID = second_table.someId`;
+
+   ```
+ - RIGT JOIN
+   ```
+   SELECT `columns`
+   FROM `first_table`
+   RIGHT JOIN `second_table`
+   ON `first_table.someID = second_table.someId`;
+
+   ```
+
 **Q: How to query `second highest salary` of an Employee?**
 
 **A:** 
- Using `MAX()` function and `sub-query`
+ Using `MAX()` function and the `sub-query`
    ```
-   SELECT MAX(salary) AS second_max_salary FROM employees WHERE salary NOT IN (SELECT MAX(salary) FROM employees);
+   SELECT MAX(salary) AS secondMaxSalary FROM employees WHERE salary NOT IN (SELECT MAX(salary) FROM employees);
    ```
    
 **Q: Query highest salary of an employee from each departments and sort by highest salary**
@@ -145,3 +178,16 @@ There are five type of JOIN clauses in standard of ANSI-SQL:
    GROUP BY d.name
    ORDER BY MAX_SALARY;
    ```
+**Q:** SELCET statement in general/common template
+**A:**
+
+```
+SELECT [DISTINCT] <field1, field2, ... fieldN, <aggr_function>>
+FROM <table(s)>
+WHERE <condition>
+AND/OR <extra condition>
+GROUP BY <field1, field2, ... fieldN> // grouping list of fields
+HAVING <group_condition>
+ORDER BY <field1, field2, ... fieldN>
+
+```
