@@ -1,4 +1,4 @@
-Programming Interview Questions and Answers with its Code
+Programming Interview Questions and Answers with Codes
 ---
 
 In this project I have collected set of questions and tried give answers with some code examples.
