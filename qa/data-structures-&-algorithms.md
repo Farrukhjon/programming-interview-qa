@@ -94,7 +94,7 @@ Because number of comparision depends from `1 + depth` of nodes.
 
 **Q: What is `Balanced Binary Search Tree`?**
 
-A: BBS does not guarantee `logarithmic search` time complexity. But `Balanced BST` does just as for `binary search`.
- - Balanced BST implementations
+A: `Binary Search Tree` does not guarantee `logarithmic search` time complexity. But `Balanced Binary Search Tree` does just like the `binary search` algorithm.
+ - Balanced Binary Search Tree implementations
    - `2-3 tree`
    - `Read-Black tree`

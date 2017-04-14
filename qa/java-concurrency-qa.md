@@ -52,7 +52,7 @@ The second alternative approach to provide threads to the shared resource with `
  - An `atomic` action `cannot stop` in the middle. It either happens completely, or it does't happen at all.
  - Basic operation of `Reading and Writing` a variable (expect long and double, they need to be volatile to be atomic) are `atomic`
 
-**Q: What is the difference between Runnable and Callable interfaces?**
+**Q: What is the difference between `Runnable` and `Callable` interfaces?**
 
 Both Runnable and Callable represent task execution API in a thread.
  Runnable:
